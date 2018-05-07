@@ -86,8 +86,8 @@ void Delayms (int xms) {
  */
 Void echoFxn(UArg arg0, UArg arg1)
 {
-    //char input[20];
-    int input;
+    char input[20];
+    //int input;
     UART_Handle uart;
     UART_Params uartParams;
     //const char echoPrompt[] = "\fEchoing characters:\r\n";
@@ -115,13 +115,13 @@ Void echoFxn(UArg arg0, UArg arg1)
 
         UART_read(uart, &input, sizeof(input));
         //UART_write(uart, &input, 1);
-        System_printf("%d\n", input);
+        System_printf("%s\n", input);
         System_flush();
 //        UART_read(uart, &input, 1);
 //        System_printf("2s\n");
 //        System_flush();
 
-        Delayms(1000);
+        Delayms(10000);
 
         //UART_write(uart, &input, 1);
     }

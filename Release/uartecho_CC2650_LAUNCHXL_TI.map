@@ -1,7 +1,7 @@
 ******************************************************************************
                   TI ARM Linker PC v16.9.6                     
 ******************************************************************************
->> Linked Mon May 07 17:21:46 2018
+>> Linked Mon May 07 17:38:18 2018
 
 OUTPUT FILE NAME:   <uartecho_CC2650_LAUNCHXL_TI.out>
 ENTRY POINT SYMBOL: "ResetISR"  address: 00003909
