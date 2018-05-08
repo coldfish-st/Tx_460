@@ -4,7 +4,7 @@
 
 SHELL = cmd.exe
 
-CG_TOOL_ROOT := C:/ti/ccsv7/tools/compiler/ti-cgt-arm_16.9.6.LTS
+CG_TOOL_ROOT := D:/ti/ccsv7/tools/compiler/ti-cgt-arm_16.9.6.LTS
 
 GEN_OPTS__FLAG := --cmd_file="configPkg/compiler.opt"
 GEN_CMDS__FLAG := -l"configPkg/linker.cmd"
@@ -13,9 +13,10 @@ ORDERED_OBJS += \
 "./CC2650_LAUNCHXL.obj" \
 "./ccfg.obj" \
 "./uartecho.obj" \
+"./smartrf_settings/smartrf_settings.obj" \
 "../CC2650_LAUNCHXL.cmd" \
 $(GEN_CMDS__FLAG) \
--l"C:/ti/tirtos_cc13xx_cc26xx_2_21_00_06/products/cc26xxware_2_24_03_17272/driverlib/bin/ccs/driverlib.lib" \
+-l"C:/TI/tirtos_cc13xx_cc26xx_2_21_00_06/products/cc26xxware_2_24_03_17272/driverlib/bin/ccs/driverlib.lib" \
 -llibc.a \
 
 -include ../makefile.init
@@ -26,7 +27,9 @@ RMDIR := RMDIR /S/Q
 # All of the sources participating in the build are defined here
 -include sources.mk
 -include subdir_vars.mk
+-include smartrf_settings/subdir_vars.mk
 -include subdir_rules.mk
+-include smartrf_settings/subdir_rules.mk
 -include objects.mk
 
 ifneq ($(MAKECMDGOALS),clean)
@@ -143,14 +146,14 @@ all: $(OBJS) $(CMD_SRCS) $(GEN_CMDS)
 uartecho_CC2650_LAUNCHXL_TI.out: $(OBJS) $(CMD_SRCS) $(GEN_CMDS)
 	@echo 'Building target: "$@"'
 	@echo 'Invoking: ARM Linker'
-	"C:/ti/ccsv7/tools/compiler/ti-cgt-arm_16.9.6.LTS/bin/armcl" -mv7M3 --code_state=16 --float_support=vfplib -me --define=ccs -g --diag_warning=225 --diag_warning=255 --diag_wrap=off --display_error_number --gen_func_subsections=on --abi=eabi -z -m"uartecho_CC2650_LAUNCHXL_TI.map" --heap_size=0 --stack_size=256 -i"C:/ti/ccsv7/tools/compiler/ti-cgt-arm_16.9.6.LTS/lib" -i"C:/ti/ccsv7/tools/compiler/ti-cgt-arm_16.9.6.LTS/include" --reread_libs --diag_wrap=off --display_error_number --warn_sections --xml_link_info="uartecho_CC2650_LAUNCHXL_TI_linkInfo.xml" --rom_model -o "uartecho_CC2650_LAUNCHXL_TI.out" $(ORDERED_OBJS)
+	"D:/ti/ccsv7/tools/compiler/ti-cgt-arm_16.9.6.LTS/bin/armcl" -mv7M3 --code_state=16 --float_support=vfplib -me --define=ccs -g --diag_warning=225 --diag_warning=255 --diag_wrap=off --display_error_number --gen_func_subsections=on --abi=eabi -z -m"uartecho_CC2650_LAUNCHXL_TI.map" --heap_size=0 --stack_size=256 -i"D:/ti/ccsv7/tools/compiler/ti-cgt-arm_16.9.6.LTS/lib" -i"D:/ti/ccsv7/tools/compiler/ti-cgt-arm_16.9.6.LTS/include" --reread_libs --diag_wrap=off --display_error_number --warn_sections --xml_link_info="uartecho_CC2650_LAUNCHXL_TI_linkInfo.xml" --rom_model -o "uartecho_CC2650_LAUNCHXL_TI.out" $(ORDERED_OBJS)
 	@echo 'Finished building target: "$@"'
 	@echo ' '
 
 uartecho_CC2650_LAUNCHXL_TI.hex: $(EXE_OUTPUTS)
 	@echo 'Building files: $(strip $(EXE_OUTPUTS__QUOTED))'
 	@echo 'Invoking: ARM Hex Utility'
-	"C:/ti/ccsv7/tools/compiler/ti-cgt-arm_16.9.6.LTS/bin/armhex" --memwidth=8 --romwidth=8 --intel -o "uartecho_CC2650_LAUNCHXL_TI.hex" $(EXE_OUTPUTS__QUOTED)
+	"D:/ti/ccsv7/tools/compiler/ti-cgt-arm_16.9.6.LTS/bin/armhex" --memwidth=8 --romwidth=8 --intel -o "uartecho_CC2650_LAUNCHXL_TI.hex" $(EXE_OUTPUTS__QUOTED)
 	@echo 'Finished building: $(strip $(EXE_OUTPUTS__QUOTED))'
 	@echo ' '
 
@@ -158,8 +161,8 @@ uartecho_CC2650_LAUNCHXL_TI.hex: $(EXE_OUTPUTS)
 clean:
 	-$(RM) $(GEN_CMDS__QUOTED)$(GEN_MISC_FILES__QUOTED)$(BIN_OUTPUTS__QUOTED)$(GEN_FILES__QUOTED)$(EXE_OUTPUTS__QUOTED)$(GEN_OPTS__QUOTED)
 	-$(RMDIR) $(GEN_MISC_DIRS__QUOTED)
-	-$(RM) "CC2650_LAUNCHXL.obj" "ccfg.obj" "uartecho.obj" 
-	-$(RM) "CC2650_LAUNCHXL.d" "ccfg.d" "uartecho.d" 
+	-$(RM) "CC2650_LAUNCHXL.obj" "ccfg.obj" "uartecho.obj" "smartrf_settings\smartrf_settings.obj" 
+	-$(RM) "CC2650_LAUNCHXL.d" "ccfg.d" "uartecho.d" "smartrf_settings\smartrf_settings.d" 
 	-@echo 'Finished clean'
 	-@echo ' '
 

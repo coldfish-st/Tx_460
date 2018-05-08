@@ -7,7 +7,7 @@
         <srcFile name="package/cfg/uartecho_pem3.c"/>
     </sources>
     <configscripts>
-        <srcFile name="C:/Users/Zhenge/workspace_v7/wisp5/CCS/uartecho_CC2650_LAUNCHXL_TI/uartecho.cfg"/>
+        <srcFile name="C:/Users/embedded/ti/Tx_460/uartecho.cfg"/>
     </configscripts>
     <makefiles>
         <srcFile name="package.mak" src="package.bld"/>
@@ -25,7 +25,7 @@
             platform="ti.platforms.simCM3"
             isa="v7M"
             suffix="em3"
-            rootDir="C:/ti/ccsv7/tools/compiler/ti-cgt-arm_16.9.6.LTS"
+            rootDir="D:/ti/ccsv7/tools/compiler/ti-cgt-arm_16.9.6.LTS"
             os="undefined"
             rts="ti.targets.arm.rtsarm">
             <model endian="little"
@@ -44,7 +44,7 @@
         isPartial="false"
         xCfgScript="package/cfg/uartecho_pem3.cfg"
         xCfgPrefix="package/cfg/uartecho_pem3"
-        cfgScript="C:/Users/Zhenge/workspace_v7/wisp5/CCS/uartecho_CC2650_LAUNCHXL_TI/uartecho.cfg"
+        cfgScript="C:/Users/embedded/ti/Tx_460/uartecho.cfg"
         cfgArgs="null"
         />
     </configurations>
@@ -56,7 +56,7 @@
         profile="release"
         xCfgScript="package/cfg/uartecho_pem3.cfg"
         xCfgPrefix="package/cfg/uartecho_pem3"
-        cfgScript="C:/Users/Zhenge/workspace_v7/wisp5/CCS/uartecho_CC2650_LAUNCHXL_TI/uartecho.cfg"
+        cfgScript="C:/Users/embedded/ti/Tx_460/uartecho.cfg"
         cfgArgs="null"
         />
     </executables>
